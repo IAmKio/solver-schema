@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/product.schema.json",
+  "title": "Intent Schema",
+  "description": "The schema definition for an Ethereum intent",
+  "type": "object",
+  "properties": {
+    "permittedChains": {
+      "description": "An array of permitted chains that this intent is allowed to use. An empty array would indicate any chain, and a single entry in the array would indicate one chain only.",
+      "type": "array"
+    },
+    "maxDeadline": {
+      "description": "The deadline for the intent. Specified as a block number.",
+      "type": "number"
+    },
+    "maxGas": {
+      "description": "The maximum gas for the intent. Specified as in wei.",
+      "type": "string"
+    },
+    "maxGasthesholdPercentage": {
+      "description": "The maximum percentage at which the gas cost should consume the total amount of the native asset in the account. For example, setting this to 50% ensures that the total gas cost does not exceed 50% or more of the remaining gas token in the account. ",
+      "type": "number"
+    },
+    "dispensableAssets": {
+      "description": "An array of permitted assets that this intent is allowed to use.",
+      "type": "array"
+    },
+    "desiredAssets": {
+      "description": "An array of desired assets that this intent is hoping to fulfil.",
+      "type": "array"
+    },
+    "meta": {
+      "description": "An object containing metadata about the intent.",
+      "type": "array"
+    }
+  },
+
+  "required": ["dispensableAssets", "desiredAssets"]
+}
